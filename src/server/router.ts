@@ -10,7 +10,7 @@ export const serverRouter = router({
         title: z.string(),
       })
     )
-    .query(async ({ input, ctx }) => {
+    .mutation(async ({ input, ctx }) => {
       return await ctx.prisma.groceryList.create({
         data: { title: input.title },
       });
